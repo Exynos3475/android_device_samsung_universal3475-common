@@ -33,9 +33,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.direct.interface=p2p-dev-wlan0 \
     net.tethering.noprovisioning=true
 
-# USB
+# Enable ADB Debugging By Default & Disable USB Debugging Popup
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.usb.config=mtp
+    persist.adb.notify=0 \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.usb.config=mtp,adb
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
