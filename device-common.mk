@@ -28,6 +28,16 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio.effect@2.0-impl
 
+# ADB Insecure
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.debuggable=1 \
+    persist.service.adb.enable=1 \
+    persist.service.debuggable=1 \
+    persist.sys.usb.config=mtp,adb
+
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_policy.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/audio_policy.conf \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
