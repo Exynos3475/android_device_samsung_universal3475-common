@@ -23,9 +23,9 @@
     <!-- THESE VALUES ARE HORRIBLY WRONG AND MAKE NO SENSE -->
 
     <!-- Threshold in micro amperes below which a charger is rated as "slow" -->
-    <integer name="config_chargingSlowlyThreshold">600</integer>
+    <integer name="config_chargingSlowlyThreshold">300</integer>
 
     <!-- Threshold in micro amperes from which a charger is rated as "fast" -->
-    <integer name="config_chargingFastThreshold">750</integer>
+    <integer name="config_chargingFastThreshold">600</integer>
 
 </resources>
