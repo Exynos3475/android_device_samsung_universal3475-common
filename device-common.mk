@@ -39,7 +39,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl.7580 \
+    android.hardware.bluetooth@1.0-impl.3475 \
     libbt-vendor
 
 # Camera
