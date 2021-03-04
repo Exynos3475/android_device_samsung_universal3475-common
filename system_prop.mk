@@ -41,10 +41,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.ccodec=0
 
-# Factory Reset Protection
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.frp.pst=/dev/block/platform/13540000.dwmmc0/by-name/PERSISTENT
-
 # Network
 # Define default initial receive window size in segments.
 PRODUCT_PROPERTY_OVERRIDES += \
