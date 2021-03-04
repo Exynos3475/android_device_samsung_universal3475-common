@@ -14,17 +14,13 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/universal7580-common
+LOCAL_PATH := device/samsung/universal3475-common
 BUILD_TOP := $(shell pwd)
 
 BUILD_BROKEN_DUP_RULES := true
 
 # Include path
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
-
-ifneq ($(TARGET_DEVICE), gvwifi)
-TARGET_SPECIFIC_HEADER_PATH += $(LOCAL_PATH)/ril/include
-endif
 
 # Firmware
 TARGET_NO_BOOTLOADER := true
@@ -33,16 +29,16 @@ TARGET_NO_RADIOIMAGE := true
 # Platform
 TARGET_BOARD_PLATFORM := exynos5
 TARGET_SLSI_VARIANT := bsp
-TARGET_SOC := exynos7580
-TARGET_BOOTLOADER_BOARD_NAME := universal7580
+TARGET_SOC := exynos3475
+TARGET_BOOTLOADER_BOARD_NAME := universal3475
 BOARD_VENDOR := samsung
 
 # CPU
 TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv8-a
+TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
-TARGET_CPU_VARIANT := cortex-a53
+TARGET_CPU_VARIANT := cortex-a7
 
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
@@ -64,13 +60,13 @@ BOARD_ROOT_EXTRA_FOLDERS += efs cpefs
 TARGET_FS_CONFIG_GEN := $(LOCAL_PATH)/config.fs
 
 # Kernel
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
+TARGET_KERNEL_ARCH := arm
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := $(BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
 TARGET_LINUX_KERNEL_VERSION := 3.10
 
 # Kernel config
-TARGET_KERNEL_SOURCE := kernel/samsung/universal7580
+TARGET_KERNEL_SOURCE := kernel/samsung/exynos3475
 
 # Use these flags if the board has a ext4 partition larger than 2gb
 BOARD_HAS_LARGE_FILESYSTEM := true
@@ -175,7 +171,7 @@ BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.samsungexynos7580
 
 # SELinux
-BOARD_SEPOLICY_DIRS += device/samsung/universal7580-common/sepolicy 
+BOARD_SEPOLICY_DIRS += device/samsung/universal3475-common/sepolicy 
 BOARD_SEPOLICY_VERS := $(PLATFORM_SDK_VERSION).0
 
 # Soong namespaces

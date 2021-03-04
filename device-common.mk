@@ -14,13 +14,13 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/samsung/universal7580-common
+LOCAL_PATH := device/samsung/universal3475-common
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Audio
 PRODUCT_PACKAGES += \
-    audio.primary.universal7580 \
+    audio.primary.universal3475 \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
@@ -206,7 +206,7 @@ PRODUCT_PACKAGES += \
 
 # call Samsung LSI board support package
 $(call inherit-product, hardware/samsung_slsi/exynos5/exynos5.mk)
-$(call inherit-product, hardware/samsung_slsi/exynos7580/exynos7580.mk)
+$(call inherit-product, hardware/samsung_slsi/exynos3475/exynos3475.mk)
 
 # call the proprietary setup
-$(call inherit-product, vendor/samsung/universal7580-common/universal7580-common-vendor.mk)
+$(call inherit-product, vendor/samsung/universal3475-common/universal3475-common-vendor.mk)
