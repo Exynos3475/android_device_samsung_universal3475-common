@@ -1,4 +1,4 @@
-import init.samsungexynos7580.usb.rc
+import init.universal3475.usb.rc
 import init.baseband.rc
 import init.wifi.rc
 import init.samsung.rc
@@ -137,18 +137,10 @@ on boot
     chown system system /sys/devices/system/cpu/cpu1/online
     chown system system /sys/devices/system/cpu/cpu2/online
     chown system system /sys/devices/system/cpu/cpu3/online
-    chown system system /sys/devices/system/cpu/cpu4/online
-    chown system system /sys/devices/system/cpu/cpu5/online
-    chown system system /sys/devices/system/cpu/cpu6/online
-    chown system system /sys/devices/system/cpu/cpu7/online
     chmod 0664 /sys/devices/system/cpu/cpu0/online
     chmod 0664 /sys/devices/system/cpu/cpu1/online
     chmod 0664 /sys/devices/system/cpu/cpu2/online
     chmod 0664 /sys/devices/system/cpu/cpu3/online
-    chmod 0664 /sys/devices/system/cpu/cpu4/online
-    chmod 0664 /sys/devices/system/cpu/cpu5/online
-    chmod 0664 /sys/devices/system/cpu/cpu6/online
-    chmod 0664 /sys/devices/system/cpu/cpu7/online
 
     # Permissions for input_booster
     chown system radio /sys/class/input_booster/level
@@ -171,33 +163,6 @@ on boot
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
     chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
-
-    # IR_LED
-    chown system radio /sys/class/sec/sec_ir/ir_send
-    chown system radio /sys/class/sec/sec_ir/ir_send_result
-
-    # SVC LED
-    chown system system /sys/class/sec/led/led_r
-    chown system system /sys/class/sec/led/led_g
-    chown system system /sys/class/sec/led/led_b
-
-    chown system system /sys/class/leds/led_r/brightness
-    chown system system /sys/class/leds/led_g/brightness
-    chown system system /sys/class/leds/led_b/brightness
-    chown system system /sys/class/leds/led_r/delay_on
-    chown system system /sys/class/leds/led_g/delay_on
-    chown system system /sys/class/leds/led_b/delay_on
-    chown system system /sys/class/leds/led_r/delay_off
-    chown system system /sys/class/leds/led_g/delay_off
-    chown system system /sys/class/leds/led_b/delay_off
-    chown system system /sys/class/leds/led_r/blink
-    chown system system /sys/class/leds/led_g/blink
-    chown system system /sys/class/leds/led_b/blink
-
-    chown system system /sys/class/sec/led/led_pattern
-    chown system system /sys/class/sec/led/led_blink
-    chown system system /sys/class/sec/led/led_br_lev
-    chown system system /sys/class/sec/led/led_lowpower
 
     # HALL IC IRQ CTRL
     chown system system /sys/class/sec/sec_key/hall_irq_ctrl
@@ -224,7 +189,7 @@ on boot
     chmod 0775 /dev/socket
 
 on fs
-    mount_all /fstab.samsungexynos7580
+    mount_all /fstab.universal3475
     setprop ro.crypto.fuse_sdcard true
 
 # Permissions for ION
@@ -266,13 +231,11 @@ on fs
     chown system system /sys/class/sec/sec_touchkey/input/enabled
 
 # Permissions for DT2W
-    chown system system /sys/android_touch/doubletap2wake
+#    chown system system /sys/android_touch/doubletap2wake
 
 # Permissions for gpio_keys
     chown radio system /sys/class/sec/sec_key/wakeup_keys
     write /sys/class/sec/sec_key/wakeup_keys 116,172
-# Fingerprint
-    mkdir /dev/validity 0770 system system
 
 # GnssConfiguration doesn't actually look at gps.conf, just the debug file
     mount none /system/etc/gps.conf /system/etc/gps_debug.conf bind
@@ -328,13 +291,6 @@ on fs
     chown system radio /sys/class/camera/front/front_camfw
     chown system radio /sys/class/camera/front/front_camtype
     chown system radio /sys/class/camera/front/front_caminfo
-    chown system radio /sys/class/camera/ois/selftest
-    chown system radio /sys/class/camera/ois/ois_power
-    chown system radio /sys/class/camera/ois/ois_rawdata
-    chown system radio /sys/class/camera/ois/oisfw
-    chown system radio /sys/class/camera/ois/ois_diff
-    chown system radio /sys/class/camera/ois/fw_update
-    chown system radio /sys/class/camera/ois/ois_exif
 
 # SENSORS
 # Accelerometer_sensor
@@ -359,85 +315,6 @@ on fs
     chown system radio /sys/class/sensors/proximity_sensor/barcode_emul_en
     chown system radio /sys/class/sensors/proximity_sensor/prox_offset_pass
     chown system radio /sys/class/sensors/proximity_sensor/prox_trim
-
-# Light_sensor
-    chown system radio /sys/class/sensors/light_sensor/lux
-    chown system radio /sys/class/sensors/light_sensor/raw_data
-    chown system radio /sys/class/sensors/light_sensor/vendor
-    chown system radio /sys/class/sensors/light_sensor/name
-
-# Gyro_sensor
-    chown system radio /sys/class/sensors/gyro_sensor/power_on
-    chown system radio /sys/class/sensors/gyro_sensor/power_off
-    chown system radio /sys/class/sensors/gyro_sensor/temperature
-    chown system radio /sys/class/sensors/gyro_sensor/selftest
-    chown system radio /sys/class/sensors/gyro_sensor/selftest_dps
-    chown system radio /sys/class/sensors/gyro_sensor/vendor
-    chown system radio /sys/class/sensors/gyro_sensor/name
-
-# Barometer_sensor
-    chown system radio /sys/class/sensors/barometer_sensor/sea_level_pressure
-    chown system radio /sys/class/sensors/barometer_sensor/vendor
-    chown system radio /sys/class/sensors/barometer_sensor/name
-    chown system radio /sys/class/sensors/barometer_sensor/calibration
-
-# Magnetic_sensor
-    chown system radio /sys/class/sensors/magnetic_sensor/vendor
-    chown system radio /sys/class/sensors/magnetic_sensor/name
-    chown system radio /sys/class/sensors/magnetic_sensor/selftest
-    chown system radio /sys/class/sensors/magnetic_sensor/raw_data
-
-# HRM_sensor
-    chown system radio /sys/class/sensors/hrm_sensor/name
-    chown system radio /sys/class/sensors/hrm_sensor/vendor
-    chown system radio /sys/class/sensors/hrm_sensor/led_current
-    chown system radio /sys/class/sensors/hrm_sensor/led_current1
-    chown system radio /sys/class/sensors/hrm_sensor/led_current2
-    chown system radio /sys/class/sensors/hrm_sensor/led_current3
-    chown system radio /sys/class/sensors/hrm_sensor/led_current4
-    chown system radio /sys/class/sensors/hrm_sensor/hr_range
-    chown system radio /sys/class/sensors/hrm_sensor/hr_range2
-    chown system radio /sys/class/sensors/hrm_sensor/look_mode_ir
-    chown system radio /sys/class/sensors/hrm_sensor/look_mode_red
-    chown system radio /sys/class/sensors/hrm_sensor/eol_test
-    chown system radio /sys/class/sensors/hrm_sensor/eol_test_result
-    chown system radio /sys/class/sensors/hrm_sensor/eol_test_status
-    chown system radio /sys/class/sensors/hrm_sensor/int_pin_check
-    chown system radio /sys/class/sensors/hrm_sensor/lib_ver
-    chown system radio /sys/class/sensors/hrm_sensor/regulator
-    chown system radio /sys/class/sensors/hrm_sensor/part_type
-    chown system radio /sys/class/sensors/hrm_sensor/device_id
-    chown system radio /sys/class/sensors/hrm_sensor/hrm_flush
-    chown system radio /sys/class/sensors/hrm_sensor/threshold
-    chown system radio /sys/class/sensors/hrm_sensor/read_reg
-    chown system radio /sys/class/sensors/hrm_sensor/write_reg
-    chown system radio /sys/class/sensors/hrm_sensor/ctrl_allreg_file
-    chown system radio /sys/class/sensors/hrm_sensor/alc_enable
-    chown system radio /sys/class/sensors/hrm_sensor/selftest
-
-# HRMLED_sensor
-    chown system radio /sys/class/sensors/hrmled_sensor/name
-    chown system radio /sys/class/sensors/hrmled_sensor/vendor
-    chown system radio /sys/class/sensors/hrmled_sensor/hrmled_flush
-
-# UV_sensor
-    chown system radio /sys/class/sensors/uv_sensor/name
-    chown system radio /sys/class/sensors/uv_sensor/vendor
-    chown system radio /sys/class/sensors/uv_sensor/uv_lib_ver
-    chown system radio /sys/class/sensors/uv_sensor/uv_sr_interval
-    chown system radio /sys/class/sensors/uv_sensor/uv_eol_test
-    chown system radio /sys/class/sensors/uv_sensor/uv_flush
-
-# Grip_sensor
-    chown system radio /sys/class/sensors/grip_sensor/name
-    chown system radio /sys/class/sensors/grip_sensor/vendor
-    chown system radio /sys/class/sensors/grip_sensor/raw_data
-    chown system radio /sys/class/sensors/grip_sensor/threshold
-    chown system radio /sys/class/sensors/grip_sensor/calibration
-    chown system radio /sys/class/sensors/grip_sensor/onoff
-    chown system radio /sys/class/sensors/grip_sensor/reset
-    chown system radio /sys/class/sensors/grip_sensor/mode
-    chown system radio /sys/class/sensors/grip_sensor/gain
 
 # SensorHub
     chown system radio /sys/class/sensors/ssp_sensor/enable
@@ -769,12 +646,6 @@ on fs
     chmod 760	/sys/devices/13870000.hsi2c/i2c-0/0-002e/iio:device2/trigger
     chmod 760	/sys/devices/13870000.hsi2c/i2c-0/0-002e/iio:device2/trigger/current_trigger
     chmod 760	/sys/class/sensors/sensor_dev/flush
-
-# IRLED_sensor
-    chown system radio /sys/class/sensors/irled_remote/name
-    chown system radio /sys/class/sensors/irled_remote/vendor
-    chown system radio /sys/class/sensors/irled_remote/irled_send
-    chown system radio /sys/class/sensors/irled_remote/irled_send_result
 
 # GPS
 service gpsd /vendor/bin/gpsd -c /system/etc/gps.xml

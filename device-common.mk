@@ -144,14 +144,14 @@ PRODUCT_COPY_FILES += \
 # ramdisk
 PRODUCT_PACKAGES += \
     init.power.rc \
-    fstab.samsungexynos7580 \
+    fstab.universal3475 \
     init.baseband.rc \
     init.samsung.rc \
-    init.samsungexynos7580.rc \
-    init.samsungexynos7580.usb.rc \
-    init.recovery.samsungexynos7580.rc \
+    init.universal3475.rc \
+    init.universal3475.usb.rc \
+    init.recovery.universal3475.rc \
     init.wifi.rc \
-    ueventd.samsungexynos7580.rc
+    ueventd.universal3475.rc
 
 # RenderScript
 PRODUCT_PACKAGES += \

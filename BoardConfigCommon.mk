@@ -168,7 +168,7 @@ BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 BACKLIGHT_PATH := "/sys/class/backlight/panel/brightness"
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.samsungexynos7580
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/ramdisk/etc/fstab.universal3475
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/samsung/universal3475-common/sepolicy 
