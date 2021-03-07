@@ -43,9 +43,6 @@ TARGET_CPU_VARIANT := cortex-a7
 # Audio
 USE_XML_AUDIO_POLICY_CONF := 1
 
-# Binder
-TARGET_USES_64_BIT_BINDER := true
-
 # Extracted with libbootimg
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
