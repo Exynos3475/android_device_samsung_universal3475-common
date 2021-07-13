@@ -40,6 +40,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.service.debuggable=1 \
     persist.sys.usb.config=mtp,adb
 
+# Low RAM Flag
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.config.low_ram=true
+    
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.stagefright.ccodec=0
