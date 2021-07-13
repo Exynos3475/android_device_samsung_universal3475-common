@@ -25,8 +25,13 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default \
     tinymix \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl
+    android.hardware.audio@6.0-impl \
+    android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.effect@5.0 \
+    android.hardware.audio.service \
+    audio.primary.default \
+    audio.sec_primary.default \
+    libtinycompress
 
 # ADB Insecure
 PRODUCT_PROPERTY_OVERRIDES += \
