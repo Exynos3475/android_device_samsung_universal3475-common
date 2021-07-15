@@ -27,7 +27,6 @@ PRODUCT_PACKAGES += \
     tinymix \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
-    android.hardware.audio.effect@5.0 \
     android.hardware.audio.service \
     audio.primary.default \
     audio.sec_primary.default \
