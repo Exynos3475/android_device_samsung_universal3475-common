@@ -18,16 +18,6 @@ LOCAL_PATH := device/samsung/universal3475-common
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Audio
-PRODUCT_PACKAGES += \
-    audio.primary.universal3475 \
-    audio.a2dp.default \
-    audio.r_submix.default \
-    audio.usb.default \
-    tinymix \
-    android.hardware.audio@2.0-impl \
-    android.hardware.audio.effect@2.0-impl
-
 # ADB Insecure
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
